@@ -19,11 +19,16 @@ const typeDefs = gql`
         matchup: (matchupId: ID!): Matchup
         techs: [Tech]!
     }
+    enum WhichTech{
+        TECH1 
+        TECH2
+    }
 
-    # type Mutation {
-        
+    type Mutation {
+        addMatchup ( tech1: String!, tech2: String! ): Matchup
+        addVote ( matchupId: ID!, technum: WhichTech ): Matchup
     
-    # }
+    }
 `
 
 module.exports= typeDefs;
